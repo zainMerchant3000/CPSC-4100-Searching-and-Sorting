@@ -40,6 +40,7 @@ public class QuickSort {
             // Find an item on the left (from index i) that is greater than pivot
             while (less(a[++i], v)) {
                 System.out.println("is " + a[i] + " < " + v);
+                System.out.println("i: " + i);
                 if (i == hi) break; // Break if i reaches the end of the array
             }
 
@@ -47,6 +48,7 @@ public class QuickSort {
             // find an item on the right (from index j) that is less than pivot
             while (less(v, a[--j])) {
                 System.out.println("is " + v + " < " + a[j] );
+                System.out.println("j: " + j);
                 if (j == lo) break;      // redundant since a[lo] acts as sentinel
             }
 
@@ -139,7 +141,8 @@ public class QuickSort {
      * @param args the command-line arguments
      */
     public static void main(String[] args) {
-        String[] array = {"a","f","e","d","c","l"};
+        // a = 15, b = 21, c = 35, d = 39, e = 41, f = 42, g = 56, h = 75
+        String[] array = {"g","d","c","f","a","e","b","h"};
         System.out.println("Original array: " + Arrays.toString(array));
         // Sort the array
         QuickSort.sort(array);
